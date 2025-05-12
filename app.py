@@ -13,6 +13,8 @@ from langchain.chains.combine_documents import create_stuff_documents_chain
 
 load_dotenv()
 
+from langchain_community.vectorstores import FAISS
+
 def get_vectorstore_from_url(url):
     # get the text in document form
     loader = WebBaseLoader(url)
@@ -24,7 +26,7 @@ def get_vectorstore_from_url(url):
     document_chunks = text_splitter.split_documents(document)
     
     # create a vectorstore from the chunks
-    vector_store = Chroma.from_documents(document_chunks, OpenAIEmbeddings())
+    vector_store = FAISS.from_documents(document_chunks, OpenAIEmbeddings())
 
     return vector_store
 
