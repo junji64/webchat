@@ -77,7 +77,7 @@ st.title("Chat with websites")
 # sidebar
 with st.sidebar:
     st.header("Settings")
-    website_url = st.text_input("Website URL")
+    website_url = st.text_input("Website URL", placeholder="https://...")
 
 if website_url is None or website_url == "":
     st.info("Please enter a website URL")
