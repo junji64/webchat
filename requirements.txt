@@ -5,3 +5,4 @@ langchain_openai==0.3.16
 python-dotenv==1.1.0
 streamlit==1.37.1
 faiss-cpu
+bs4
